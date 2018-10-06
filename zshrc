@@ -385,7 +385,7 @@ NEWLINE=$'\n'
 # }
 # PROMPT='$FIRST_PROMPT${NEWLINE}%(?.%F{green}.%F{red})❯%f '
 
-PROMPT='%B%F{yellow}%n%F{nocolor} at %B%F{white}%m%F{nocolor}: %B%F{blue}%~%F{nocolor} - %B%F{yellow}%*%F{nocolor} [%h] ${NEWLINE}❯%b%f '
+PROMPT='%B%(!.%F{red}root%f.%F{yellow}$USER%f)%F{nocolor} at %B%F{white}%m%F{nocolor}: %B%F{blue}%~%F{nocolor} - %B%F{yellow}%*%F{nocolor} [%h] ${NEWLINE}❯%b%f '
 # alias
 alias pacu='sudo pacman -Syu'
 alias pacum='sudo pacman -Scc --noconfirm'
