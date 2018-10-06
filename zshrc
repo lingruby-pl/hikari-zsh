@@ -20,6 +20,17 @@
 # Email : chris@nullday.de
 # Github: www.github.com/Shibumi
 
+# Colors!
+set black       = '%{\033[30m%}'
+set red         = '%{\033[31m%}'
+set green       = '%{\033[32m%}'
+set yellow      = '%{\033[33m%}'
+set blue        = '%{\033[34m%}'
+set megenta     = '%{\033[35m%}'
+set cyan        = '%{\033[36m%}'
+set white       = '%{\033[37m%}'
+set nocolor     = '%{\033[0m%}'
+
 # Colors in less
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
@@ -29,7 +40,7 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 # protect special characters
-export LC_CTYPE="en_US.UTF-8"
+export LC_CTYPE="pl_PL.UTF-8"
 
 # Setopts
 # allow prompt substitution
@@ -368,11 +379,16 @@ prompt_git_dirty() {
 }
 
 NEWLINE=$'\n'
-precmd() {
-    vcs_info
-    FIRST_PROMPT="%(!.%F{red}root%f.%F{green}$USER%f) %F{$prompt_color}%m%f %F{$(prompt_dir_writeable)}%~%f %* %F{$(prompt_git_dirty)}${vcs_info_msg_0_}%f"
-}
-PROMPT='$FIRST_PROMPT${NEWLINE}%(?.%F{green}.%F{red})❯%f '
+# precmd() {
+#     vcs_info
+#     FIRST_PROMPT="%(!.%F{red}root%f.%F{green}$USER%f) %F{$prompt_color}%m%f %F{$(prompt_dir_writeable)}%~%f %* %F{$(prompt_git_dirty)}${vcs_info_msg_0_}%f"
+# }
+# PROMPT='$FIRST_PROMPT${NEWLINE}%(?.%F{green}.%F{red})❯%f '
+
+PROMPT='%B%F{yellow}%n%F{nocolor} at %B%F{white}%m%F{nocolor}: %B%F{blue}%~%F{nocolor} - %B%F{yellow}%*%F{nocolor} [%h] ${NEWLINE}❯%b%f '
+# alias
+alias pacu='sudo pacman -Syu'
+alias pacum='sudo pacman -Scc --noconfirm'
 
 # Bindkeys
 bindkey -e
